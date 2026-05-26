@@ -1,0 +1,34 @@
+driver: mhaddon
+navigator: arestrep
+
+
+Question 6:
+a. The Beale type is a struct that contains the letters in the cipher and a separate field to keep a count of 
+how many letters. encipher() and decipher(), on the other hand, just return an int array and a char array with 
+no separate length. Is one approach better than the other, or are they essentially the same?
+
+The Beale struct with the length field is more reliable because it keeps the data and its size together. 
+encipher() and decipher() rely on sentinel values (the int* array ends with a special number, 
+and the char* array ends with \0) to mark the end. If a sentinel value ever appeared as real data by accident, 
+it could cause problems. Keeping the length stored separately makes the program clearer and less error-prone.
+
+b. What would you do to this project to make it more robust and harder to crack? 
+Would that be a difficult change in the code?
+By adding randomness you could make it harder to crack (choosing a random index for each letter instead of always the first match).
+Having the same text file available (pride.txt)makes it easier to crack, making a secret key would make it harder to crack. 
+
+c. What is your opinion on the three ciphers (Caesar, Vigenère, Beale) we have looked at?
+From the three cipher methods we have seen, they have increased in complexity and security with each one. Caesar ciphers being the weakest, 
+Vigenere being of moderate complexity and security, and Beale being the most complex we have seen. 
+These ciphers are extremely unsecure by today's standards but are very interesting to see. 
+In their times, these would have been ingenuative ways to keep messages and information secure. 
+They are also interesting in the fact they could possibly be the base for many modern ciphers and encryption methods.
+
+d. Are you going to try to decode Thomas Jefferson Beale's treasure map?
+It would be unwise not to at least give it a try for humor's sake. If the legends are true and there is treasure 
+which can be uncovered by using some of these cipher methods, there would be plenty to gain and not much to lose. 
+Only issue with this cipher is that the exact text used to encode the information would have to be discovered. 
+There is a great possibility that the text used is no longer in existance, making the message almost 'lost'.
+ 
+
+

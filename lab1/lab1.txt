@@ -1,0 +1,16 @@
+driver: mhaddon
+navigator: arestrep
+
+1. To 'undo' the Caesar cipher, the recipient would have to be given the 'key' (the number used to rotate the letters). 
+The person looking to read the message would then have to know in which direction the letters were rotated or try both directions. 
+If the reader did not have the key, they would need to rotate the letters in the message through all possible combinations until there 
+are words that are legible. Depending on the length of the message, it could take a while but nothing susbstantial compared to other methods
+of encryption. 
+
+2. Rotate should not directly work with negative numbers as the number represents the amount of times a letter is 'rotated' about the alphabet. 
+The program could take the absolute value of the negative number and use the value as it would any other positive digit. 
+To expand the program, a negative number could be used to rotate the letter/alphabet in a negative direction as mentioned in the previous 
+question. This could add another level of 'encryption' 
+
+3. What is unique/special about rot13()? How can you prove it with your code?
+

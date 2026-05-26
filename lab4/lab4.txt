@@ -1,0 +1,15 @@
+driver: mhaddon
+
+Question 6: 
+In lab 4 I used: 
+1) Buffer overlow prevention 
+Since the buffer size was 255 characters, I used %254s in fscanf() instead of %s. 
+This limits the number of characters read into the buffer and prevents a buffer overflow 
+if the input file contains an unusually long word.
+2) Managed memory using malloc() and free()
+Allocated the memory in first_letters() and arrtostr() using malloc() and then freed that memory in main() 
+using free(). 
+3) Command line args validation. 
+In main() I checked that the argc was equal to 2 before accessing argv[1]. This prevents 
+the program from crashing if the user forgets to supply a filename. It sends an error message
+to the user. 

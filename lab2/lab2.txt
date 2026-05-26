@@ -1,0 +1,32 @@
+driver: mhaddon
+
+Question 6 (safe input):
+<10 characters: username and password accepted; printed exactly as entered
+=10 characters: input was shortened to 9 characters (mariamaria became mariamari)
+>10 characters: input was also shortened to 9 characters; program still worked and did not crash
+
+Question 8 (unsafe input):
+<10 characters: username and password accepted; printed exactly as entered.
+=10 characters: leaked extra memory contents: Welcome, mariamaria1234567890Secret:It could be bunnies!
+>10 characters: output became corrupted and still leaked the secret message:
+Welcome, mariamariamariamariamariat:It could be bunnies!
+
+Question 9a:
+get_input_unsafe() keeps reading characters from the keyboard until it sees a newline, 
+but it never checks if the input is longer than the buffer. 
+Because of this, if the user types more characters than the buffer can hold, 
+the function writes past the end of the array and causes a buffer overflow. 
+It also never adds a null terminator ('\0'). When the program later prints the buffer using %s, 
+it keeps reading into nearby memory until it eventually finds a null terminator, 
+which can cause secret or unintended data to be printed.
+
+Question 9b:
+It violates confidentiality because secret data stored in nearby memory was revealed ("It could be bunnies!"). 
+It violates integrity because overflowing input can overwrite nearby variables and corrupt the program's behavior. 
+It violates availability because with a larger overflow input the program crashes and is no longer usable.
+
+Question 9c:
+Secret revealed: It could be bunnies!
+When I made the program blow up I got:
+*** stack smashing detected ***: terminated
+Aborted (core dumped)

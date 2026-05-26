@@ -1,0 +1,29 @@
+# Compiled objects and binaries
+*.o
+*.h.gch
+
+# Lab executables (no extension)
+lab1/caesar
+lab2/buffy
+lab3/viggy
+lab4/lab4
+lab5/beale
+lab6/steggy
+lab7/steggy
+
+# Archive files
+*.tgz
+
+# macOS
+.DS_Store
+.xsfrg
+
+# Hidden submission files
+lab1/.xsfrg
+
+# npm/node (not part of cybersecurity labs)
+node_modules/
+package-lock.json
+
+# Exclude sexy-phish (has its own repo)
+sexy-phish/
